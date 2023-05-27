@@ -7,23 +7,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         00008154  08000110  08000110  00010110  2**3
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       00000490  08008268  08008268  00018268  2**3
+  2 .rodata       00000488  08008268  08008268  00018268  2**3
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  080086f8  080086f8  0002020c  2**0
+  3 .ARM.extab    00000000  080086f0  080086f0  0002020c  2**0
                   CONTENTS
-  4 .ARM          00000000  080086f8  080086f8  0002020c  2**0
+  4 .ARM          00000000  080086f0  080086f0  0002020c  2**0
                   CONTENTS
-  5 .preinit_array 00000000  080086f8  080086f8  0002020c  2**0
+  5 .preinit_array 00000000  080086f0  080086f0  0002020c  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  080086f8  080086f8  000186f8  2**2
+  6 .init_array   00000004  080086f0  080086f0  000186f0  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  7 .fini_array   00000004  080086fc  080086fc  000186fc  2**2
+  7 .fini_array   00000004  080086f4  080086f4  000186f4  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  8 .data         0000020c  20000000  08008700  00020000  2**2
+  8 .data         0000020c  20000000  080086f8  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          00000138  2000020c  0800890c  0002020c  2**2
+  9 .bss          00000138  2000020c  08008904  0002020c  2**2
                   ALLOC
- 10 ._user_heap_stack 00000604  20000344  0800890c  00020344  2**0
+ 10 ._user_heap_stack 00000604  20000344  08008904  00020344  2**0
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  0002020c  2**0
                   CONTENTS, READONLY
@@ -1541,11 +1541,11 @@ int main(void) {
  8000efc:	4b19      	ldr	r3, [pc, #100]	; (8000f64 <main+0xd4>)
  8000efe:	603b      	str	r3, [r7, #0]
 
-	while(socket(socNum, Sn_MR_UDP, 5000, 0) != socNum);
+	while(socket(socNum, Sn_MR_UDP, 6000, 0) != socNum);
  8000f00:	bf00      	nop
  8000f02:	7df8      	ldrb	r0, [r7, #23]
  8000f04:	2300      	movs	r3, #0
- 8000f06:	f241 3288 	movw	r2, #5000	; 0x1388
+ 8000f06:	f241 7270 	movw	r2, #6000	; 0x1770
  8000f0a:	2102      	movs	r1, #2
  8000f0c:	f000 f92e 	bl	800116c <socket>
  8000f10:	4603      	mov	r3, r0
@@ -1571,7 +1571,7 @@ int main(void) {
  8000f2e:	461a      	mov	r2, r3
  8000f30:	4b0e      	ldr	r3, [pc, #56]	; (8000f6c <main+0xdc>)
  8000f32:	801a      	strh	r2, [r3, #0]
-		sprintf(str, "heading=%d\n", heading);
+		sprintf(str, "%d", heading);
  8000f34:	4b0d      	ldr	r3, [pc, #52]	; (8000f6c <main+0xdc>)
  8000f36:	881b      	ldrh	r3, [r3, #0]
  8000f38:	461a      	mov	r2, r3
@@ -1588,7 +1588,7 @@ int main(void) {
  8000f50:	e7e3      	b.n	8000f1a <main+0x8a>
  8000f52:	bf00      	nop
  8000f54:	20000234 	.word	0x20000234
- 8000f58:	08008274 	.word	0x08008274
+ 8000f58:	0800826c 	.word	0x0800826c
  8000f5c:	0f01a8c0 	.word	0x0f01a8c0
  8000f60:	0101a8c0 	.word	0x0101a8c0
  8000f64:	0401a8c0 	.word	0x0401a8c0
@@ -4320,7 +4320,7 @@ void initializeW5500(uint8_t mac[], uint8_t ip[], uint8_t sn[], uint8_t gw[])
  8001f32:	3730      	adds	r7, #48	; 0x30
  8001f34:	46bd      	mov	sp, r7
  8001f36:	bd80      	pop	{r7, pc}
- 8001f38:	0800827c 	.word	0x0800827c
+ 8001f38:	08008274 	.word	0x08008274
  8001f3c:	08001e51 	.word	0x08001e51
  8001f40:	08001e39 	.word	0x08001e39
  8001f44:	08001e8d 	.word	0x08001e8d
@@ -5035,7 +5035,7 @@ LoopFillZerobss:
   ldr r1, =_edata
  8002320:	2000020c 	.word	0x2000020c
   ldr r2, =_sidata
- 8002324:	08008700 	.word	0x08008700
+ 8002324:	080086f8 	.word	0x080086f8
   ldr r2, =_sbss
  8002328:	2000020c 	.word	0x2000020c
   ldr r4, =_ebss
@@ -10302,7 +10302,7 @@ if (((RCC_ClkInitStruct->ClockType) & RCC_CLOCKTYPE_PCLK1) == RCC_CLOCKTYPE_PCLK
  8004142:	bf00      	nop
  8004144:	40022000 	.word	0x40022000
  8004148:	40021000 	.word	0x40021000
- 800414c:	08008294 	.word	0x08008294
+ 800414c:	0800828c 	.word	0x0800828c
  8004150:	20000004 	.word	0x20000004
  8004154:	20000034 	.word	0x20000034
 
@@ -10450,7 +10450,7 @@ uint32_t HAL_RCC_GetSysClockFreq(void)
  80041fe:	bc90      	pop	{r4, r7}
  8004200:	4770      	bx	lr
  8004202:	bf00      	nop
- 8004204:	08008284 	.word	0x08008284
+ 8004204:	0800827c 	.word	0x0800827c
  8004208:	40021000 	.word	0x40021000
  800420c:	007a1200 	.word	0x007a1200
  8004210:	003d0900 	.word	0x003d0900
@@ -10498,7 +10498,7 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  8004244:	4618      	mov	r0, r3
  8004246:	bd80      	pop	{r7, pc}
  8004248:	40021000 	.word	0x40021000
- 800424c:	080082a4 	.word	0x080082a4
+ 800424c:	0800829c 	.word	0x0800829c
 
 08004250 <RCC_Delay>:
   * @brief  This function provides delay (in milliseconds) based on CPU cycles method.
@@ -12859,10 +12859,10 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  8004faa:	4798      	blx	r3
  8004fac:	3601      	adds	r6, #1
  8004fae:	e7f2      	b.n	8004f96 <__libc_init_array+0x1e>
- 8004fb0:	080086f8 	.word	0x080086f8
- 8004fb4:	080086f8 	.word	0x080086f8
- 8004fb8:	080086f8 	.word	0x080086f8
- 8004fbc:	080086fc 	.word	0x080086fc
+ 8004fb0:	080086f0 	.word	0x080086f0
+ 8004fb4:	080086f0 	.word	0x080086f0
+ 8004fb8:	080086f0 	.word	0x080086f0
+ 8004fbc:	080086f4 	.word	0x080086f4
 
 08004fc0 <memset>:
  8004fc0:	4603      	mov	r3, r0
@@ -13295,11 +13295,11 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  80053d4:	e7ee      	b.n	80053b4 <_printf_float+0x2a8>
  80053d6:	bf00      	nop
  80053d8:	7fefffff 	.word	0x7fefffff
- 80053dc:	080082b0 	.word	0x080082b0
- 80053e0:	080082b4 	.word	0x080082b4
- 80053e4:	080082bc 	.word	0x080082bc
- 80053e8:	080082b8 	.word	0x080082b8
- 80053ec:	080082c0 	.word	0x080082c0
+ 80053dc:	080082a8 	.word	0x080082a8
+ 80053e0:	080082ac 	.word	0x080082ac
+ 80053e4:	080082b4 	.word	0x080082b4
+ 80053e8:	080082b0 	.word	0x080082b0
+ 80053ec:	080082b8 	.word	0x080082b8
  80053f0:	9a0e      	ldr	r2, [sp, #56]	; 0x38
  80053f2:	6da3      	ldr	r3, [r4, #88]	; 0x58
  80053f4:	429a      	cmp	r2, r3
@@ -13786,8 +13786,8 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  8005880:	2500      	movs	r5, #0
  8005882:	f104 0619 	add.w	r6, r4, #25
  8005886:	e7f5      	b.n	8005874 <_printf_i+0x230>
- 8005888:	080082c2 	.word	0x080082c2
- 800588c:	080082d3 	.word	0x080082d3
+ 8005888:	080082ba 	.word	0x080082ba
+ 800588c:	080082cb 	.word	0x080082cb
 
 08005890 <siprintf>:
  8005890:	b40e      	push	{r1, r2, r3}
@@ -14192,15 +14192,15 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  8005ca4:	3fc68a28 	.word	0x3fc68a28
  8005ca8:	509f79fb 	.word	0x509f79fb
  8005cac:	3fd34413 	.word	0x3fd34413
- 8005cb0:	080082f1 	.word	0x080082f1
- 8005cb4:	08008308 	.word	0x08008308
+ 8005cb0:	080082e9 	.word	0x080082e9
+ 8005cb4:	08008300 	.word	0x08008300
  8005cb8:	7ff00000 	.word	0x7ff00000
- 8005cbc:	080082ed 	.word	0x080082ed
- 8005cc0:	080082e4 	.word	0x080082e4
- 8005cc4:	080082c1 	.word	0x080082c1
+ 8005cbc:	080082e5 	.word	0x080082e5
+ 8005cc0:	080082dc 	.word	0x080082dc
+ 8005cc4:	080082b9 	.word	0x080082b9
  8005cc8:	3ff80000 	.word	0x3ff80000
- 8005ccc:	080083f8 	.word	0x080083f8
- 8005cd0:	08008363 	.word	0x08008363
+ 8005ccc:	080083f0 	.word	0x080083f0
+ 8005cd0:	0800835b 	.word	0x0800835b
  8005cd4:	2401      	movs	r4, #1
  8005cd6:	2300      	movs	r3, #0
  8005cd8:	940b      	str	r4, [sp, #44]	; 0x2c
@@ -14442,8 +14442,8 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  8005f84:	e9cd 0104 	strd	r0, r1, [sp, #16]
  8005f88:	e7c3      	b.n	8005f12 <_dtoa_r+0x52a>
  8005f8a:	bf00      	nop
- 8005f8c:	080083f8 	.word	0x080083f8
- 8005f90:	080083d0 	.word	0x080083d0
+ 8005f8c:	080083f0 	.word	0x080083f0
+ 8005f90:	080083c8 	.word	0x080083c8
  8005f94:	3ff00000 	.word	0x3ff00000
  8005f98:	40240000 	.word	0x40240000
  8005f9c:	401c0000 	.word	0x401c0000
@@ -15084,9 +15084,9 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  80065b2:	4683      	mov	fp, r0
  80065b4:	e7eb      	b.n	800658e <_dtoa_r+0xba6>
  80065b6:	bf00      	nop
- 80065b8:	08008363 	.word	0x08008363
- 80065bc:	080082c0 	.word	0x080082c0
- 80065c0:	080082e4 	.word	0x080082e4
+ 80065b8:	0800835b 	.word	0x0800835b
+ 80065bc:	080082b8 	.word	0x080082b8
+ 80065c0:	080082dc 	.word	0x080082dc
 
 080065c4 <_localeconv_r>:
  80065c4:	4800      	ldr	r0, [pc, #0]	; (80065c8 <_localeconv_r+0x4>)
@@ -15181,8 +15181,8 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  8006684:	e9c0 3303 	strd	r3, r3, [r0, #12]
  8006688:	e7f7      	b.n	800667a <_Balloc+0x66>
  800668a:	bf00      	nop
- 800668c:	080082f1 	.word	0x080082f1
- 8006690:	08008374 	.word	0x08008374
+ 800668c:	080082e9 	.word	0x080082e9
+ 8006690:	0800836c 	.word	0x0800836c
 
 08006694 <_Bfree>:
  8006694:	b570      	push	{r4, r5, r6, lr}
@@ -15210,8 +15210,8 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  80066c8:	6021      	str	r1, [r4, #0]
  80066ca:	f843 4022 	str.w	r4, [r3, r2, lsl #2]
  80066ce:	bd70      	pop	{r4, r5, r6, pc}
- 80066d0:	080082f1 	.word	0x080082f1
- 80066d4:	08008374 	.word	0x08008374
+ 80066d0:	080082e9 	.word	0x080082e9
+ 80066d4:	0800836c 	.word	0x0800836c
 
 080066d8 <__multadd>:
  80066d8:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
@@ -15265,8 +15265,8 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  8006754:	6125      	str	r5, [r4, #16]
  8006756:	4620      	mov	r0, r4
  8006758:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
- 800675c:	08008363 	.word	0x08008363
- 8006760:	08008374 	.word	0x08008374
+ 800675c:	0800835b 	.word	0x0800835b
+ 8006760:	0800836c 	.word	0x0800836c
 
 08006764 <__hi0bits>:
  8006764:	0c02      	lsrs	r2, r0, #16
@@ -15359,8 +15359,8 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  800681e:	6103      	str	r3, [r0, #16]
  8006820:	bd10      	pop	{r4, pc}
  8006822:	bf00      	nop
- 8006824:	08008363 	.word	0x08008363
- 8006828:	08008374 	.word	0x08008374
+ 8006824:	0800835b 	.word	0x0800835b
+ 8006828:	0800836c 	.word	0x0800836c
 
 0800682c <__multiply>:
  800682c:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
@@ -15479,8 +15479,8 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  800696e:	3e01      	subs	r6, #1
  8006970:	e79d      	b.n	80068ae <__multiply+0x82>
  8006972:	bf00      	nop
- 8006974:	08008363 	.word	0x08008363
- 8006978:	08008374 	.word	0x08008374
+ 8006974:	0800835b 	.word	0x0800835b
+ 8006978:	0800836c 	.word	0x0800836c
 
 0800697c <__pow5mult>:
  800697c:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
@@ -15548,9 +15548,9 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  8006a1c:	4638      	mov	r0, r7
  8006a1e:	e8bd 83f8 	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
  8006a22:	bf00      	nop
- 8006a24:	080084c0 	.word	0x080084c0
- 8006a28:	080082f1 	.word	0x080082f1
- 8006a2c:	08008374 	.word	0x08008374
+ 8006a24:	080084b8 	.word	0x080084b8
+ 8006a28:	080082e9 	.word	0x080082e9
+ 8006a2c:	0800836c 	.word	0x0800836c
 
 08006a30 <__lshift>:
  8006a30:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
@@ -15630,8 +15630,8 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  8006b02:	d8f9      	bhi.n	8006af8 <__lshift+0xc8>
  8006b04:	e7ea      	b.n	8006adc <__lshift+0xac>
  8006b06:	bf00      	nop
- 8006b08:	08008363 	.word	0x08008363
- 8006b0c:	08008374 	.word	0x08008374
+ 8006b08:	0800835b 	.word	0x0800835b
+ 8006b0c:	0800836c 	.word	0x0800836c
 
 08006b10 <__mcmp>:
  8006b10:	4603      	mov	r3, r0
@@ -15761,8 +15761,8 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  8006c52:	3f01      	subs	r7, #1
  8006c54:	e7e8      	b.n	8006c28 <__mdiff+0xe0>
  8006c56:	bf00      	nop
- 8006c58:	08008363 	.word	0x08008363
- 8006c5c:	08008374 	.word	0x08008374
+ 8006c58:	0800835b 	.word	0x0800835b
+ 8006c5c:	0800836c 	.word	0x0800836c
 
 08006c60 <__d2b>:
  8006c60:	e92d 41f3 	stmdb	sp!, {r0, r1, r4, r5, r6, r7, r8, lr}
@@ -15833,8 +15833,8 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  8006d0a:	6031      	str	r1, [r6, #0]
  8006d0c:	e7e1      	b.n	8006cd2 <__d2b+0x72>
  8006d0e:	bf00      	nop
- 8006d10:	08008363 	.word	0x08008363
- 8006d14:	08008374 	.word	0x08008374
+ 8006d10:	0800835b 	.word	0x0800835b
+ 8006d14:	0800836c 	.word	0x0800836c
 
 08006d18 <_calloc_r>:
  8006d18:	b570      	push	{r4, r5, r6, lr}
@@ -16335,9 +16335,9 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  8007194:	f7fe fa56 	bl	8005644 <_printf_i>
  8007198:	e7eb      	b.n	8007172 <_svfiprintf_r+0x1c2>
  800719a:	bf00      	nop
- 800719c:	080084cc 	.word	0x080084cc
- 80071a0:	080084d2 	.word	0x080084d2
- 80071a4:	080084d6 	.word	0x080084d6
+ 800719c:	080084c4 	.word	0x080084c4
+ 80071a0:	080084ca 	.word	0x080084ca
+ 80071a4:	080084ce 	.word	0x080084ce
  80071a8:	0800510d 	.word	0x0800510d
  80071ac:	08006ef9 	.word	0x08006ef9
 
@@ -16378,9 +16378,9 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  80071f8:	e7f3      	b.n	80071e2 <__assert_func+0x12>
  80071fa:	bf00      	nop
  80071fc:	2000003c 	.word	0x2000003c
- 8007200:	080084dd 	.word	0x080084dd
- 8007204:	080084ea 	.word	0x080084ea
- 8007208:	08008518 	.word	0x08008518
+ 8007200:	080084d5 	.word	0x080084d5
+ 8007204:	080084e2 	.word	0x080084e2
+ 8007208:	08008510 	.word	0x08008510
 
 0800720c <fiprintf>:
  800720c:	b40e      	push	{r1, r2, r3}
@@ -16771,12 +16771,12 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  8007584:	f7fe f85e 	bl	8005644 <_printf_i>
  8007588:	e7e4      	b.n	8007554 <_vfiprintf_r+0x208>
  800758a:	bf00      	nop
- 800758c:	08008644 	.word	0x08008644
- 8007590:	08008664 	.word	0x08008664
- 8007594:	08008624 	.word	0x08008624
- 8007598:	080084cc 	.word	0x080084cc
- 800759c:	080084d2 	.word	0x080084d2
- 80075a0:	080084d6 	.word	0x080084d6
+ 800758c:	0800863c 	.word	0x0800863c
+ 8007590:	0800865c 	.word	0x0800865c
+ 8007594:	0800861c 	.word	0x0800861c
+ 8007598:	080084c4 	.word	0x080084c4
+ 800759c:	080084ca 	.word	0x080084ca
+ 80075a0:	080084ce 	.word	0x080084ce
  80075a4:	0800510d 	.word	0x0800510d
  80075a8:	08007329 	.word	0x08007329
 
@@ -16852,9 +16852,9 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  800763c:	f04f 37ff 	mov.w	r7, #4294967295
  8007640:	e7ea      	b.n	8007618 <__swbuf_r+0x6c>
  8007642:	bf00      	nop
- 8007644:	08008644 	.word	0x08008644
- 8007648:	08008664 	.word	0x08008664
- 800764c:	08008624 	.word	0x08008624
+ 8007644:	0800863c 	.word	0x0800863c
+ 8007648:	0800865c 	.word	0x0800865c
+ 800764c:	0800861c 	.word	0x0800861c
 
 08007650 <__ascii_wctomb>:
  8007650:	4603      	mov	r3, r0
@@ -16961,9 +16961,9 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  8007734:	e7f7      	b.n	8007726 <__swsetup_r+0xba>
  8007736:	bf00      	nop
  8007738:	2000003c 	.word	0x2000003c
- 800773c:	08008644 	.word	0x08008644
- 8007740:	08008664 	.word	0x08008664
- 8007744:	08008624 	.word	0x08008624
+ 800773c:	0800863c 	.word	0x0800863c
+ 8007740:	0800865c 	.word	0x0800865c
+ 8007744:	0800861c 	.word	0x0800861c
 
 08007748 <abort>:
  8007748:	2006      	movs	r0, #6
@@ -17147,9 +17147,9 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  80078c2:	bf08      	it	eq
  80078c4:	68ec      	ldreq	r4, [r5, #12]
  80078c6:	e7da      	b.n	800787e <_fflush_r+0x22>
- 80078c8:	08008644 	.word	0x08008644
- 80078cc:	08008664 	.word	0x08008664
- 80078d0:	08008624 	.word	0x08008624
+ 80078c8:	0800863c 	.word	0x0800863c
+ 80078cc:	0800865c 	.word	0x0800865c
+ 80078d0:	0800861c 	.word	0x0800861c
 
 080078d4 <std>:
  80078d4:	2300      	movs	r3, #0
@@ -17274,7 +17274,7 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  80079e6:	2301      	movs	r3, #1
  80079e8:	61a3      	str	r3, [r4, #24]
  80079ea:	e7d1      	b.n	8007990 <__sinit+0xc>
- 80079ec:	080082ac 	.word	0x080082ac
+ 80079ec:	080082a4 	.word	0x080082a4
  80079f0:	0800791d 	.word	0x0800791d
 
 080079f4 <__sfp>:
@@ -17329,7 +17329,7 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  8007a72:	603b      	str	r3, [r7, #0]
  8007a74:	e7ee      	b.n	8007a54 <__sfp+0x60>
  8007a76:	bf00      	nop
- 8007a78:	080082ac 	.word	0x080082ac
+ 8007a78:	080082a4 	.word	0x080082a4
  8007a7c:	ffff0001 	.word	0xffff0001
 
 08007a80 <_fwalk_reent>:
@@ -17850,8 +17850,8 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  8007f18:	54442d18 	.word	0x54442d18
  8007f1c:	3fe921fb 	.word	0x3fe921fb
  8007f20:	7ff00000 	.word	0x7ff00000
- 8007f24:	08008688 	.word	0x08008688
- 8007f28:	080086a0 	.word	0x080086a0
+ 8007f24:	08008680 	.word	0x08008680
+ 8007f28:	08008698 	.word	0x08008698
  8007f2c:	00000000 	.word	0x00000000
 
 08007f30 <atan>:
@@ -18130,8 +18130,8 @@ static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_
  800822c:	40038000 	.word	0x40038000
  8008230:	3ff80000 	.word	0x3ff80000
  8008234:	bff00000 	.word	0xbff00000
- 8008238:	080086d8 	.word	0x080086d8
- 800823c:	080086b8 	.word	0x080086b8
+ 8008238:	080086d0 	.word	0x080086d0
+ 800823c:	080086b0 	.word	0x080086b0
  8008240:	3ff921fb 	.word	0x3ff921fb
 
 08008244 <fabs>:

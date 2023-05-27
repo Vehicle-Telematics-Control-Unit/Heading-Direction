@@ -117,7 +117,7 @@ int main(void) {
 
 	uint8_t dstip[4] = { 192, 168, 1, 4 };	//destination ip address
 
-	while(socket(socNum, Sn_MR_UDP, 5000, 0) != socNum);
+	while(socket(socNum, Sn_MR_UDP, 6000, 0) != socNum);
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
@@ -127,7 +127,7 @@ int main(void) {
 		MPU6050_Read_All(&hi2c1);
 		HAL_Delay(20);
 		heading = MPU6050_Parsing_NoOffest(&MPU6050);
-		sprintf(str, "heading=%d\n", heading);
+		sprintf(str, "%d", heading);
 		Socket_sendUDP(socNum, str, dstip, 5001);//sends message to a destination ip address and port
 		/* USER CODE BEGIN 3 */
 	}
