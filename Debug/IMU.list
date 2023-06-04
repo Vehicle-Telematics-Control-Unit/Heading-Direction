@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  0002020c  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0000bfcd  00000000  00000000  00020235  2**0
+ 12 .debug_info   0000bfd2  00000000  00000000  00020235  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 0000247d  00000000  00000000  0002c202  2**0
+ 13 .debug_abbrev 0000248e  00000000  00000000  0002c207  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00000c78  00000000  00000000  0002e680  2**3
+ 14 .debug_aranges 00000c78  00000000  00000000  0002e698  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 00000b90  00000000  00000000  0002f2f8  2**3
+ 15 .debug_ranges 00000b90  00000000  00000000  0002f310  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00018d73  00000000  00000000  0002fe88  2**0
+ 16 .debug_macro  00018d85  00000000  00000000  0002fea0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000e789  00000000  00000000  00048bfb  2**0
+ 17 .debug_line   0000e78b  00000000  00000000  00048c25  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00089b04  00000000  00000000  00057384  2**0
+ 18 .debug_str    00089b27  00000000  00000000  000573b0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  000e0e88  2**0
+ 19 .comment      00000050  00000000  00000000  000e0ed7  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000044dc  00000000  00000000  000e0ed8  2**2
+ 20 .debug_frame  000044dc  00000000  00000000  000e0f28  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1450,12 +1450,12 @@ uint16_t MPU6050_Parsing_NoOffest(MPU6050_t *DataStruct) {
  8000e8c:	40668000 	.word	0x40668000
 
 08000e90 <main>:
-
 /**
  * @brief  The application entry point.
  * @retval int
  */
-int main(void) {
+int main(void)
+{
  8000e90:	b580      	push	{r7, lr}
  8000e92:	b086      	sub	sp, #24
  8000e94:	af00      	add	r7, sp, #0
@@ -1489,11 +1489,11 @@ int main(void) {
 	MPU6050_Init(&hi2c1);
  8000eaa:	482a      	ldr	r0, [pc, #168]	; (8000f54 <main+0xc4>)
  8000eac:	f7ff fe0c 	bl	8000ac8 <MPU6050_Init>
-	//sprintf(str, "Success");
-	//else
-	//sprintf(str, "Failed");
-	//HAL_UART_Transmit(&huart1, str, sizeof(str), 100);
-	//HAL_Delay(1000);
+	// sprintf(str, "Success");
+	// else
+	// sprintf(str, "Failed");
+	// HAL_UART_Transmit(&huart1, str, sizeof(str), 100);
+	// HAL_Delay(1000);
 	MPU6050_Bypass(&hi2c1);
  8000eb0:	4828      	ldr	r0, [pc, #160]	; (8000f54 <main+0xc4>)
  8000eb2:	f7ff fe3d 	bl	8000b30 <MPU6050_Bypass>
@@ -1513,39 +1513,39 @@ int main(void) {
  8000ec8:	2300      	movs	r3, #0
  8000eca:	75fb      	strb	r3, [r7, #23]
 
-	uint8_t mac[] = { 0x00, 0x08, 0xdc, 0xab, 0xcd, 0xef };	// Mac address
+	uint8_t mac[] = {0x00, 0x08, 0xdc, 0xab, 0xcd, 0xef}; // Mac address
  8000ecc:	4a22      	ldr	r2, [pc, #136]	; (8000f58 <main+0xc8>)
  8000ece:	f107 0310 	add.w	r3, r7, #16
  8000ed2:	e892 0003 	ldmia.w	r2, {r0, r1}
  8000ed6:	6018      	str	r0, [r3, #0]
  8000ed8:	3304      	adds	r3, #4
  8000eda:	8019      	strh	r1, [r3, #0]
-	uint8_t ip[] = { 192, 168, 1, 15 };	// IP address
+	uint8_t ip[] = {192, 168, 1, 15};					  // IP address
  8000edc:	4b1f      	ldr	r3, [pc, #124]	; (8000f5c <main+0xcc>)
  8000ede:	60fb      	str	r3, [r7, #12]
-	uint8_t sn[] = { 255, 255, 255, 0 };	// Subnet mask
+	uint8_t sn[] = {255, 255, 255, 0};					  // Subnet mask
  8000ee0:	f06f 437f 	mvn.w	r3, #4278190080	; 0xff000000
  8000ee4:	60bb      	str	r3, [r7, #8]
-	uint8_t gw[] = { 192, 168, 1, 1 };	// Gateway address
+	uint8_t gw[] = {192, 168, 1, 1};					  // Gateway address
  8000ee6:	4b1e      	ldr	r3, [pc, #120]	; (8000f60 <main+0xd0>)
  8000ee8:	607b      	str	r3, [r7, #4]
 
-	initializeW5500(mac, ip, sn, gw);//configures the MAC address, IP address, subnet mask and gateway of the device or node.
+	initializeW5500(mac, ip, sn, gw); // configures the MAC address, IP address, subnet mask and gateway of the device or node.
  8000eea:	1d3b      	adds	r3, r7, #4
  8000eec:	f107 0208 	add.w	r2, r7, #8
  8000ef0:	f107 010c 	add.w	r1, r7, #12
  8000ef4:	f107 0010 	add.w	r0, r7, #16
  8000ef8:	f000 ffda 	bl	8001eb0 <initializeW5500>
 
-	uint8_t dstip[4] = { 192, 168, 1, 4 };	//destination ip address
+	uint8_t dstip[4] = {192, 168, 1, 4}; // destination ip address
  8000efc:	4b19      	ldr	r3, [pc, #100]	; (8000f64 <main+0xd4>)
  8000efe:	603b      	str	r3, [r7, #0]
 
-	while(socket(socNum, Sn_MR_UDP, 6000, 0) != socNum);
+	while (socket(socNum, Sn_MR_UDP, SRC_PORT, FLAG) != socNum)
  8000f00:	bf00      	nop
  8000f02:	7df8      	ldrb	r0, [r7, #23]
  8000f04:	2300      	movs	r3, #0
- 8000f06:	f241 7270 	movw	r2, #6000	; 0x1770
+ 8000f06:	f241 7271 	movw	r2, #6001	; 0x1771
  8000f0a:	2102      	movs	r1, #2
  8000f0c:	f000 f92e 	bl	800116c <socket>
  8000f10:	4603      	mov	r3, r0
@@ -1553,10 +1553,10 @@ int main(void) {
  8000f14:	7dfb      	ldrb	r3, [r7, #23]
  8000f16:	429a      	cmp	r2, r3
  8000f18:	d1f3      	bne.n	8000f02 <main+0x72>
-
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
-	while (1) {
+	while (1)
+	{
 		/* USER CODE END WHILE */
 		MPU6050_Read_All(&hi2c1);
  8000f1a:	480e      	ldr	r0, [pc, #56]	; (8000f54 <main+0xc4>)
@@ -1578,13 +1578,13 @@ int main(void) {
  8000f3a:	490d      	ldr	r1, [pc, #52]	; (8000f70 <main+0xe0>)
  8000f3c:	480d      	ldr	r0, [pc, #52]	; (8000f74 <main+0xe4>)
  8000f3e:	f004 fca7 	bl	8005890 <siprintf>
-		Socket_sendUDP(socNum, str, dstip, 5001);//sends message to a destination ip address and port
+		Socket_sendUDP(socNum, str, dstip, DST_PORT); // sends message to a destination ip address and port
  8000f42:	463a      	mov	r2, r7
  8000f44:	7df8      	ldrb	r0, [r7, #23]
  8000f46:	f241 3389 	movw	r3, #5001	; 0x1389
  8000f4a:	490a      	ldr	r1, [pc, #40]	; (8000f74 <main+0xe4>)
  8000f4c:	f000 fffe 	bl	8001f4c <Socket_sendUDP>
-	while (1) {
+	{
  8000f50:	e7e3      	b.n	8000f1a <main+0x8a>
  8000f52:	bf00      	nop
  8000f54:	20000234 	.word	0x20000234
@@ -1598,22 +1598,22 @@ int main(void) {
  8000f74:	200002e8 	.word	0x200002e8
 
 08000f78 <SystemClock_Config>:
-
 /**
  * @brief System Clock Configuration
  * @retval None
  */
-void SystemClock_Config(void) {
+void SystemClock_Config(void)
+{
  8000f78:	b580      	push	{r7, lr}
  8000f7a:	b090      	sub	sp, #64	; 0x40
  8000f7c:	af00      	add	r7, sp, #0
-	RCC_OscInitTypeDef RCC_OscInitStruct = { 0 };
+	RCC_OscInitTypeDef RCC_OscInitStruct = {0};
  8000f7e:	f107 0318 	add.w	r3, r7, #24
  8000f82:	2228      	movs	r2, #40	; 0x28
  8000f84:	2100      	movs	r1, #0
  8000f86:	4618      	mov	r0, r3
  8000f88:	f004 f81a 	bl	8004fc0 <memset>
-	RCC_ClkInitTypeDef RCC_ClkInitStruct = { 0 };
+	RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
  8000f8c:	1d3b      	adds	r3, r7, #4
  8000f8e:	2200      	movs	r2, #0
  8000f90:	601a      	str	r2, [r3, #0]
@@ -1646,23 +1646,23 @@ void SystemClock_Config(void) {
 	RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
  8000fb6:	f44f 13e0 	mov.w	r3, #1835008	; 0x1c0000
  8000fba:	63fb      	str	r3, [r7, #60]	; 0x3c
-	if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
+	if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
  8000fbc:	f107 0318 	add.w	r3, r7, #24
  8000fc0:	4618      	mov	r0, r3
  8000fc2:	f002 fd5d 	bl	8003a80 <HAL_RCC_OscConfig>
  8000fc6:	4603      	mov	r3, r0
  8000fc8:	2b00      	cmp	r3, #0
  8000fca:	d001      	beq.n	8000fd0 <SystemClock_Config+0x58>
+	{
 		Error_Handler();
  8000fcc:	f000 f8c8 	bl	8001160 <Error_Handler>
 	}
 
 	/** Initializes the CPU, AHB and APB buses clocks
 	 */
-	RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK
+	RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
  8000fd0:	230f      	movs	r3, #15
  8000fd2:	607b      	str	r3, [r7, #4]
-			| RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
 	RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
  8000fd4:	2302      	movs	r3, #2
  8000fd6:	60bb      	str	r3, [r7, #8]
@@ -1676,7 +1676,7 @@ void SystemClock_Config(void) {
  8000fe2:	2300      	movs	r3, #0
  8000fe4:	617b      	str	r3, [r7, #20]
 
-	if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK) {
+	if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
  8000fe6:	1d3b      	adds	r3, r7, #4
  8000fe8:	2102      	movs	r1, #2
  8000fea:	4618      	mov	r0, r3
@@ -1684,6 +1684,7 @@ void SystemClock_Config(void) {
  8000ff0:	4603      	mov	r3, r0
  8000ff2:	2b00      	cmp	r3, #0
  8000ff4:	d001      	beq.n	8000ffa <SystemClock_Config+0x82>
+	{
 		Error_Handler();
  8000ff6:	f000 f8b3 	bl	8001160 <Error_Handler>
 	}
@@ -1695,12 +1696,12 @@ void SystemClock_Config(void) {
 	...
 
 08001004 <MX_I2C1_Init>:
-/**
  * @brief I2C1 Initialization Function
  * @param None
  * @retval None
  */
-static void MX_I2C1_Init(void) {
+static void MX_I2C1_Init(void)
+{
  8001004:	b580      	push	{r7, lr}
  8001006:	af00      	add	r7, sp, #0
 	/* USER CODE END I2C1_Init 0 */
@@ -1744,19 +1745,19 @@ static void MX_I2C1_Init(void) {
  800103a:	4b06      	ldr	r3, [pc, #24]	; (8001054 <MX_I2C1_Init+0x50>)
  800103c:	2200      	movs	r2, #0
  800103e:	621a      	str	r2, [r3, #32]
-	if (HAL_I2C_Init(&hi2c1) != HAL_OK) {
+	if (HAL_I2C_Init(&hi2c1) != HAL_OK)
  8001040:	4804      	ldr	r0, [pc, #16]	; (8001054 <MX_I2C1_Init+0x50>)
  8001042:	f001 fd1d 	bl	8002a80 <HAL_I2C_Init>
  8001046:	4603      	mov	r3, r0
  8001048:	2b00      	cmp	r3, #0
  800104a:	d001      	beq.n	8001050 <MX_I2C1_Init+0x4c>
+	{
 		Error_Handler();
  800104c:	f000 f888 	bl	8001160 <Error_Handler>
 	}
 	/* USER CODE BEGIN I2C1_Init 2 */
 
 	/* USER CODE END I2C1_Init 2 */
-
 }
  8001050:	bf00      	nop
  8001052:	bd80      	pop	{r7, pc}
@@ -1765,12 +1766,12 @@ static void MX_I2C1_Init(void) {
  800105c:	00061a80 	.word	0x00061a80
 
 08001060 <MX_SPI1_Init>:
-/**
  * @brief SPI1 Initialization Function
  * @param None
  * @retval None
  */
-static void MX_SPI1_Init(void) {
+static void MX_SPI1_Init(void)
+{
  8001060:	b580      	push	{r7, lr}
  8001062:	af00      	add	r7, sp, #0
 
@@ -1826,19 +1827,19 @@ static void MX_SPI1_Init(void) {
  80010aa:	4b06      	ldr	r3, [pc, #24]	; (80010c4 <MX_SPI1_Init+0x64>)
  80010ac:	220a      	movs	r2, #10
  80010ae:	62da      	str	r2, [r3, #44]	; 0x2c
-	if (HAL_SPI_Init(&hspi1) != HAL_OK) {
+	if (HAL_SPI_Init(&hspi1) != HAL_OK)
  80010b0:	4804      	ldr	r0, [pc, #16]	; (80010c4 <MX_SPI1_Init+0x64>)
  80010b2:	f003 f8eb 	bl	800428c <HAL_SPI_Init>
  80010b6:	4603      	mov	r3, r0
  80010b8:	2b00      	cmp	r3, #0
  80010ba:	d001      	beq.n	80010c0 <MX_SPI1_Init+0x60>
+	{
 		Error_Handler();
  80010bc:	f000 f850 	bl	8001160 <Error_Handler>
 	}
 	/* USER CODE BEGIN SPI1_Init 2 */
 
 	/* USER CODE END SPI1_Init 2 */
-
 }
  80010c0:	bf00      	nop
  80010c2:	bd80      	pop	{r7, pc}
@@ -1846,16 +1847,16 @@ static void MX_SPI1_Init(void) {
  80010c8:	40013000 	.word	0x40013000
 
 080010cc <MX_GPIO_Init>:
-/**
  * @brief GPIO Initialization Function
  * @param None
  * @retval None
  */
-static void MX_GPIO_Init(void) {
+static void MX_GPIO_Init(void)
+{
  80010cc:	b580      	push	{r7, lr}
  80010ce:	b088      	sub	sp, #32
  80010d0:	af00      	add	r7, sp, #0
-	GPIO_InitTypeDef GPIO_InitStruct = { 0 };
+	GPIO_InitTypeDef GPIO_InitStruct = {0};
  80010d2:	f107 0310 	add.w	r3, r7, #16
  80010d6:	2200      	movs	r2, #0
  80010d8:	601a      	str	r2, [r3, #0]
@@ -1923,7 +1924,6 @@ static void MX_GPIO_Init(void) {
  8001146:	4619      	mov	r1, r3
  8001148:	4804      	ldr	r0, [pc, #16]	; (800115c <MX_GPIO_Init+0x90>)
  800114a:	f001 fafd 	bl	8002748 <HAL_GPIO_Init>
-
 }
  800114e:	bf00      	nop
  8001150:	3720      	adds	r7, #32
@@ -1934,12 +1934,12 @@ static void MX_GPIO_Init(void) {
  800115c:	40010800 	.word	0x40010800
 
 08001160 <Error_Handler>:
-
 /**
  * @brief  This function is executed in case of error occurrence.
  * @retval None
  */
-void Error_Handler(void) {
+void Error_Handler(void)
+{
  8001160:	b480      	push	{r7}
  8001162:	af00      	add	r7, sp, #0
   \details Disables IRQ interrupts by setting the I-bit in the CPSR.
@@ -1954,7 +1954,7 @@ __STATIC_FORCEINLINE void __disable_irq(void)
 	/* USER CODE BEGIN Error_Handler_Debug */
 	/* User can add his own implementation to report the HAL error return state */
 	__disable_irq();
-	while (1) {
+	while (1)
  8001168:	e7fe      	b.n	8001168 <Error_Handler+0x8>
 	...
 
@@ -4162,7 +4162,7 @@ extern SPI_HandleTypeDef hspi1;
 /**
  * @brief function to set cs pin low to start transmission
  */
-void cs_sel() {
+static void cs_sel(void) {
  8001e38:	b580      	push	{r7, lr}
  8001e3a:	af00      	add	r7, sp, #0
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET); //CS LOW
@@ -4181,7 +4181,7 @@ void cs_sel() {
 /**
  * @brief function to set cs pin high to end transmission
  */
-void cs_desel() {
+static void cs_desel(void) {
  8001e50:	b580      	push	{r7, lr}
  8001e52:	af00      	add	r7, sp, #0
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET); //CS HIGH

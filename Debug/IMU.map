@@ -2971,10 +2971,8 @@ LOAD e:/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.extern
                 0x0000000008001d7e                wiz_send_data
  *fill*         0x0000000008001e36        0x2 
  .text.cs_sel   0x0000000008001e38       0x18 ./Core/Src/w5500_interface.o
-                0x0000000008001e38                cs_sel
  .text.cs_desel
                 0x0000000008001e50       0x18 ./Core/Src/w5500_interface.o
-                0x0000000008001e50                cs_desel
  .text.spi_rb   0x0000000008001e68       0x24 ./Core/Src/w5500_interface.o
                 0x0000000008001e68                spi_rb
  .text.spi_wb   0x0000000008001e8c       0x24 ./Core/Src/w5500_interface.o
@@ -3851,47 +3849,47 @@ LOAD e:/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.extern
 LOAD e:/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a
 LOAD e:/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.100.202210260954/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp\libgcc.a
 
-.debug_info     0x0000000000000000     0xbfcd
+.debug_info     0x0000000000000000     0xbfd2
  .debug_info    0x0000000000000000      0x8cd ./Core/Src/MPU6050.o
- .debug_info    0x00000000000008cd      0xf65 ./Core/Src/main.o
- .debug_info    0x0000000000001832      0x78a ./Core/Src/socket.o
- .debug_info    0x0000000000001fbc      0xcc8 ./Core/Src/stm32f1xx_hal_msp.o
- .debug_info    0x0000000000002c84      0x656 ./Core/Src/stm32f1xx_it.o
- .debug_info    0x00000000000032da      0x6e0 ./Core/Src/syscalls.o
- .debug_info    0x00000000000039ba      0x171 ./Core/Src/sysmem.o
- .debug_info    0x0000000000003b2b      0x23d ./Core/Src/system_stm32f1xx.o
- .debug_info    0x0000000000003d68      0x586 ./Core/Src/w5500.o
- .debug_info    0x00000000000042ee      0x9f3 ./Core/Src/w5500_interface.o
- .debug_info    0x0000000000004ce1      0xd36 ./Core/Src/wizchip_conf.o
- .debug_info    0x0000000000005a17       0x22 ./Core/Startup/startup_stm32f103c8tx.o
- .debug_info    0x0000000000005a39      0x734 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
- .debug_info    0x000000000000616d      0xb20 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
- .debug_info    0x0000000000006c8d      0x73f ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
- .debug_info    0x00000000000073cc      0x615 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
- .debug_info    0x00000000000079e1     0x2734 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o
- .debug_info    0x000000000000a115      0x860 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
- .debug_info    0x000000000000a975     0x1658 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
+ .debug_info    0x00000000000008cd      0xf6a ./Core/Src/main.o
+ .debug_info    0x0000000000001837      0x78a ./Core/Src/socket.o
+ .debug_info    0x0000000000001fc1      0xcc8 ./Core/Src/stm32f1xx_hal_msp.o
+ .debug_info    0x0000000000002c89      0x656 ./Core/Src/stm32f1xx_it.o
+ .debug_info    0x00000000000032df      0x6e0 ./Core/Src/syscalls.o
+ .debug_info    0x00000000000039bf      0x171 ./Core/Src/sysmem.o
+ .debug_info    0x0000000000003b30      0x23d ./Core/Src/system_stm32f1xx.o
+ .debug_info    0x0000000000003d6d      0x586 ./Core/Src/w5500.o
+ .debug_info    0x00000000000042f3      0x9f3 ./Core/Src/w5500_interface.o
+ .debug_info    0x0000000000004ce6      0xd36 ./Core/Src/wizchip_conf.o
+ .debug_info    0x0000000000005a1c       0x22 ./Core/Startup/startup_stm32f103c8tx.o
+ .debug_info    0x0000000000005a3e      0x734 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
+ .debug_info    0x0000000000006172      0xb20 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+ .debug_info    0x0000000000006c92      0x73f ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
+ .debug_info    0x00000000000073d1      0x615 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
+ .debug_info    0x00000000000079e6     0x2734 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o
+ .debug_info    0x000000000000a11a      0x860 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+ .debug_info    0x000000000000a97a     0x1658 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
 
-.debug_abbrev   0x0000000000000000     0x247d
+.debug_abbrev   0x0000000000000000     0x248e
  .debug_abbrev  0x0000000000000000      0x1d0 ./Core/Src/MPU6050.o
- .debug_abbrev  0x00000000000001d0      0x292 ./Core/Src/main.o
- .debug_abbrev  0x0000000000000462      0x1ae ./Core/Src/socket.o
- .debug_abbrev  0x0000000000000610      0x1a0 ./Core/Src/stm32f1xx_hal_msp.o
- .debug_abbrev  0x00000000000007b0      0x170 ./Core/Src/stm32f1xx_it.o
- .debug_abbrev  0x0000000000000920      0x1b3 ./Core/Src/syscalls.o
- .debug_abbrev  0x0000000000000ad3       0xbb ./Core/Src/sysmem.o
- .debug_abbrev  0x0000000000000b8e      0x13b ./Core/Src/system_stm32f1xx.o
- .debug_abbrev  0x0000000000000cc9      0x211 ./Core/Src/w5500.o
- .debug_abbrev  0x0000000000000eda      0x248 ./Core/Src/w5500_interface.o
- .debug_abbrev  0x0000000000001122      0x30a ./Core/Src/wizchip_conf.o
- .debug_abbrev  0x000000000000142c       0x12 ./Core/Startup/startup_stm32f103c8tx.o
- .debug_abbrev  0x000000000000143e      0x1fb ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
- .debug_abbrev  0x0000000000001639      0x2ed ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
- .debug_abbrev  0x0000000000001926      0x1fe ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
- .debug_abbrev  0x0000000000001b24      0x1bb ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
- .debug_abbrev  0x0000000000001cdf      0x288 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o
- .debug_abbrev  0x0000000000001f67      0x2a8 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
- .debug_abbrev  0x000000000000220f      0x26e ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
+ .debug_abbrev  0x00000000000001d0      0x2a3 ./Core/Src/main.o
+ .debug_abbrev  0x0000000000000473      0x1ae ./Core/Src/socket.o
+ .debug_abbrev  0x0000000000000621      0x1a0 ./Core/Src/stm32f1xx_hal_msp.o
+ .debug_abbrev  0x00000000000007c1      0x170 ./Core/Src/stm32f1xx_it.o
+ .debug_abbrev  0x0000000000000931      0x1b3 ./Core/Src/syscalls.o
+ .debug_abbrev  0x0000000000000ae4       0xbb ./Core/Src/sysmem.o
+ .debug_abbrev  0x0000000000000b9f      0x13b ./Core/Src/system_stm32f1xx.o
+ .debug_abbrev  0x0000000000000cda      0x211 ./Core/Src/w5500.o
+ .debug_abbrev  0x0000000000000eeb      0x248 ./Core/Src/w5500_interface.o
+ .debug_abbrev  0x0000000000001133      0x30a ./Core/Src/wizchip_conf.o
+ .debug_abbrev  0x000000000000143d       0x12 ./Core/Startup/startup_stm32f103c8tx.o
+ .debug_abbrev  0x000000000000144f      0x1fb ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
+ .debug_abbrev  0x000000000000164a      0x2ed ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+ .debug_abbrev  0x0000000000001937      0x1fe ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
+ .debug_abbrev  0x0000000000001b35      0x1bb ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
+ .debug_abbrev  0x0000000000001cf0      0x288 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o
+ .debug_abbrev  0x0000000000001f78      0x2a8 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+ .debug_abbrev  0x0000000000002220      0x26e ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
 
 .debug_aranges  0x0000000000000000      0xc78
  .debug_aranges
@@ -3954,7 +3952,7 @@ LOAD e:/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.extern
  .debug_ranges  0x0000000000000950       0x80 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
  .debug_ranges  0x00000000000009d0      0x1c0 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
 
-.debug_macro    0x0000000000000000    0x18d73
+.debug_macro    0x0000000000000000    0x18d85
  .debug_macro   0x0000000000000000      0x29b ./Core/Src/MPU6050.o
  .debug_macro   0x000000000000029b      0xa6c ./Core/Src/MPU6050.o
  .debug_macro   0x0000000000000d07       0x22 ./Core/Src/MPU6050.o
@@ -4011,117 +4009,117 @@ LOAD e:/stm32cubeide_1.11.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.extern
  .debug_macro   0x00000000000161b8       0x66 ./Core/Src/MPU6050.o
  .debug_macro   0x000000000001621e       0xd8 ./Core/Src/MPU6050.o
  .debug_macro   0x00000000000162f6       0xb8 ./Core/Src/MPU6050.o
- .debug_macro   0x00000000000163ae      0x1f0 ./Core/Src/main.o
- .debug_macro   0x000000000001659e       0x8e ./Core/Src/main.o
- .debug_macro   0x000000000001662c       0x51 ./Core/Src/main.o
- .debug_macro   0x000000000001667d       0x5c ./Core/Src/main.o
- .debug_macro   0x00000000000166d9       0xb8 ./Core/Src/main.o
- .debug_macro   0x0000000000016791       0xb8 ./Core/Src/socket.o
- .debug_macro   0x0000000000016849       0x66 ./Core/Src/socket.o
- .debug_macro   0x00000000000168af      0x1f0 ./Core/Src/stm32f1xx_hal_msp.o
- .debug_macro   0x0000000000016a9f      0x1fa ./Core/Src/stm32f1xx_it.o
- .debug_macro   0x0000000000016c99      0x24c ./Core/Src/syscalls.o
- .debug_macro   0x0000000000016ee5       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x0000000000016ef5       0x35 ./Core/Src/syscalls.o
- .debug_macro   0x0000000000016f2a       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x0000000000016f3a       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x0000000000016f4a       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x0000000000016f5a       0x1c ./Core/Src/syscalls.o
- .debug_macro   0x0000000000016f76       0x52 ./Core/Src/syscalls.o
- .debug_macro   0x0000000000016fc8       0x22 ./Core/Src/syscalls.o
- .debug_macro   0x0000000000016fea       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x0000000000016ffa       0x52 ./Core/Src/syscalls.o
- .debug_macro   0x000000000001704c       0xd5 ./Core/Src/syscalls.o
- .debug_macro   0x0000000000017121       0x1c ./Core/Src/syscalls.o
- .debug_macro   0x000000000001713d       0x3d ./Core/Src/syscalls.o
- .debug_macro   0x000000000001717a       0x35 ./Core/Src/syscalls.o
- .debug_macro   0x00000000000171af      0x12c ./Core/Src/syscalls.o
- .debug_macro   0x00000000000172db       0x16 ./Core/Src/syscalls.o
- .debug_macro   0x00000000000172f1       0x16 ./Core/Src/syscalls.o
- .debug_macro   0x0000000000017307       0x29 ./Core/Src/syscalls.o
- .debug_macro   0x0000000000017330       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x0000000000017340      0x241 ./Core/Src/syscalls.o
- .debug_macro   0x0000000000017581       0x1c ./Core/Src/syscalls.o
- .debug_macro   0x000000000001759d       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x00000000000175ad       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x00000000000175bd       0x16 ./Core/Src/syscalls.o
- .debug_macro   0x00000000000175d3      0x145 ./Core/Src/syscalls.o
- .debug_macro   0x0000000000017718      0x189 ./Core/Src/syscalls.o
- .debug_macro   0x00000000000178a1       0x16 ./Core/Src/syscalls.o
- .debug_macro   0x00000000000178b7       0xce ./Core/Src/syscalls.o
- .debug_macro   0x0000000000017985       0xff ./Core/Src/sysmem.o
- .debug_macro   0x0000000000017a84      0x23b ./Core/Src/sysmem.o
- .debug_macro   0x0000000000017cbf      0x198 ./Core/Src/system_stm32f1xx.o
- .debug_macro   0x0000000000017e57       0x9d ./Core/Src/w5500.o
- .debug_macro   0x0000000000017ef4      0x1d3 ./Core/Src/w5500_interface.o
- .debug_macro   0x00000000000180c7       0x94 ./Core/Src/wizchip_conf.o
- .debug_macro   0x000000000001815b      0x1bc ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
- .debug_macro   0x0000000000018317      0x198 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
- .debug_macro   0x00000000000184af      0x198 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
- .debug_macro   0x0000000000018647      0x203 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
- .debug_macro   0x000000000001884a      0x1df ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o
- .debug_macro   0x0000000000018a29      0x1aa ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
- .debug_macro   0x0000000000018bd3      0x1a0 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
+ .debug_macro   0x00000000000163ae      0x202 ./Core/Src/main.o
+ .debug_macro   0x00000000000165b0       0x8e ./Core/Src/main.o
+ .debug_macro   0x000000000001663e       0x51 ./Core/Src/main.o
+ .debug_macro   0x000000000001668f       0x5c ./Core/Src/main.o
+ .debug_macro   0x00000000000166eb       0xb8 ./Core/Src/main.o
+ .debug_macro   0x00000000000167a3       0xb8 ./Core/Src/socket.o
+ .debug_macro   0x000000000001685b       0x66 ./Core/Src/socket.o
+ .debug_macro   0x00000000000168c1      0x1f0 ./Core/Src/stm32f1xx_hal_msp.o
+ .debug_macro   0x0000000000016ab1      0x1fa ./Core/Src/stm32f1xx_it.o
+ .debug_macro   0x0000000000016cab      0x24c ./Core/Src/syscalls.o
+ .debug_macro   0x0000000000016ef7       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x0000000000016f07       0x35 ./Core/Src/syscalls.o
+ .debug_macro   0x0000000000016f3c       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x0000000000016f4c       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x0000000000016f5c       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x0000000000016f6c       0x1c ./Core/Src/syscalls.o
+ .debug_macro   0x0000000000016f88       0x52 ./Core/Src/syscalls.o
+ .debug_macro   0x0000000000016fda       0x22 ./Core/Src/syscalls.o
+ .debug_macro   0x0000000000016ffc       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x000000000001700c       0x52 ./Core/Src/syscalls.o
+ .debug_macro   0x000000000001705e       0xd5 ./Core/Src/syscalls.o
+ .debug_macro   0x0000000000017133       0x1c ./Core/Src/syscalls.o
+ .debug_macro   0x000000000001714f       0x3d ./Core/Src/syscalls.o
+ .debug_macro   0x000000000001718c       0x35 ./Core/Src/syscalls.o
+ .debug_macro   0x00000000000171c1      0x12c ./Core/Src/syscalls.o
+ .debug_macro   0x00000000000172ed       0x16 ./Core/Src/syscalls.o
+ .debug_macro   0x0000000000017303       0x16 ./Core/Src/syscalls.o
+ .debug_macro   0x0000000000017319       0x29 ./Core/Src/syscalls.o
+ .debug_macro   0x0000000000017342       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x0000000000017352      0x241 ./Core/Src/syscalls.o
+ .debug_macro   0x0000000000017593       0x1c ./Core/Src/syscalls.o
+ .debug_macro   0x00000000000175af       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x00000000000175bf       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x00000000000175cf       0x16 ./Core/Src/syscalls.o
+ .debug_macro   0x00000000000175e5      0x145 ./Core/Src/syscalls.o
+ .debug_macro   0x000000000001772a      0x189 ./Core/Src/syscalls.o
+ .debug_macro   0x00000000000178b3       0x16 ./Core/Src/syscalls.o
+ .debug_macro   0x00000000000178c9       0xce ./Core/Src/syscalls.o
+ .debug_macro   0x0000000000017997       0xff ./Core/Src/sysmem.o
+ .debug_macro   0x0000000000017a96      0x23b ./Core/Src/sysmem.o
+ .debug_macro   0x0000000000017cd1      0x198 ./Core/Src/system_stm32f1xx.o
+ .debug_macro   0x0000000000017e69       0x9d ./Core/Src/w5500.o
+ .debug_macro   0x0000000000017f06      0x1d3 ./Core/Src/w5500_interface.o
+ .debug_macro   0x00000000000180d9       0x94 ./Core/Src/wizchip_conf.o
+ .debug_macro   0x000000000001816d      0x1bc ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
+ .debug_macro   0x0000000000018329      0x198 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+ .debug_macro   0x00000000000184c1      0x198 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
+ .debug_macro   0x0000000000018659      0x203 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
+ .debug_macro   0x000000000001885c      0x1df ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o
+ .debug_macro   0x0000000000018a3b      0x1aa ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+ .debug_macro   0x0000000000018be5      0x1a0 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
 
-.debug_line     0x0000000000000000     0xe789
+.debug_line     0x0000000000000000     0xe78b
  .debug_line    0x0000000000000000      0x94d ./Core/Src/MPU6050.o
- .debug_line    0x000000000000094d      0x818 ./Core/Src/main.o
- .debug_line    0x0000000000001165      0xd3b ./Core/Src/socket.o
- .debug_line    0x0000000000001ea0      0x73d ./Core/Src/stm32f1xx_hal_msp.o
- .debug_line    0x00000000000025dd      0x778 ./Core/Src/stm32f1xx_it.o
- .debug_line    0x0000000000002d55      0x7ef ./Core/Src/syscalls.o
- .debug_line    0x0000000000003544      0x4e5 ./Core/Src/sysmem.o
- .debug_line    0x0000000000003a29      0x6d1 ./Core/Src/system_stm32f1xx.o
- .debug_line    0x00000000000040fa      0x6c7 ./Core/Src/w5500.o
- .debug_line    0x00000000000047c1      0x733 ./Core/Src/w5500_interface.o
- .debug_line    0x0000000000004ef4      0xac8 ./Core/Src/wizchip_conf.o
- .debug_line    0x00000000000059bc       0x87 ./Core/Startup/startup_stm32f103c8tx.o
- .debug_line    0x0000000000005a43      0x8fe ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
- .debug_line    0x0000000000006341      0xae6 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
- .debug_line    0x0000000000006e27      0xd56 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
- .debug_line    0x0000000000007b7d      0x995 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
- .debug_line    0x0000000000008512     0x39e8 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o
- .debug_line    0x000000000000befa      0xd0c ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
- .debug_line    0x000000000000cc06     0x1b83 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
+ .debug_line    0x000000000000094d      0x81a ./Core/Src/main.o
+ .debug_line    0x0000000000001167      0xd3b ./Core/Src/socket.o
+ .debug_line    0x0000000000001ea2      0x73d ./Core/Src/stm32f1xx_hal_msp.o
+ .debug_line    0x00000000000025df      0x778 ./Core/Src/stm32f1xx_it.o
+ .debug_line    0x0000000000002d57      0x7ef ./Core/Src/syscalls.o
+ .debug_line    0x0000000000003546      0x4e5 ./Core/Src/sysmem.o
+ .debug_line    0x0000000000003a2b      0x6d1 ./Core/Src/system_stm32f1xx.o
+ .debug_line    0x00000000000040fc      0x6c7 ./Core/Src/w5500.o
+ .debug_line    0x00000000000047c3      0x733 ./Core/Src/w5500_interface.o
+ .debug_line    0x0000000000004ef6      0xac8 ./Core/Src/wizchip_conf.o
+ .debug_line    0x00000000000059be       0x87 ./Core/Startup/startup_stm32f103c8tx.o
+ .debug_line    0x0000000000005a45      0x8fe ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
+ .debug_line    0x0000000000006343      0xae6 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+ .debug_line    0x0000000000006e29      0xd56 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
+ .debug_line    0x0000000000007b7f      0x995 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
+ .debug_line    0x0000000000008514     0x39e8 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o
+ .debug_line    0x000000000000befc      0xd0c ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+ .debug_line    0x000000000000cc08     0x1b83 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
 
-.debug_str      0x0000000000000000    0x89b04
+.debug_str      0x0000000000000000    0x89b27
  .debug_str     0x0000000000000000    0x840a7 ./Core/Src/MPU6050.o
                                       0x84497 (size before relaxing)
- .debug_str     0x00000000000840a7      0x492 ./Core/Src/main.o
-                                      0x812f6 (size before relaxing)
- .debug_str     0x0000000000084539      0x450 ./Core/Src/socket.o
+ .debug_str     0x00000000000840a7      0x4b5 ./Core/Src/main.o
+                                      0x81319 (size before relaxing)
+ .debug_str     0x000000000008455c      0x450 ./Core/Src/socket.o
                                        0x6f17 (size before relaxing)
- .debug_str     0x0000000000084989      0x334 ./Core/Src/stm32f1xx_hal_msp.o
+ .debug_str     0x00000000000849ac      0x334 ./Core/Src/stm32f1xx_hal_msp.o
                                       0x81333 (size before relaxing)
- .debug_str     0x0000000000084cbd       0xec ./Core/Src/stm32f1xx_it.o
+ .debug_str     0x0000000000084ce0       0xec ./Core/Src/stm32f1xx_it.o
                                       0x80d78 (size before relaxing)
- .debug_str     0x0000000000084da9     0x2709 ./Core/Src/syscalls.o
+ .debug_str     0x0000000000084dcc     0x2709 ./Core/Src/syscalls.o
                                        0x89f7 (size before relaxing)
- .debug_str     0x00000000000874b2       0x6b ./Core/Src/sysmem.o
+ .debug_str     0x00000000000874d5       0x6b ./Core/Src/sysmem.o
                                        0x5d33 (size before relaxing)
- .debug_str     0x000000000008751d       0x7e ./Core/Src/system_stm32f1xx.o
+ .debug_str     0x0000000000087540       0x7e ./Core/Src/system_stm32f1xx.o
                                       0x7d7c4 (size before relaxing)
- .debug_str     0x000000000008759b      0x116 ./Core/Src/w5500.o
+ .debug_str     0x00000000000875be      0x116 ./Core/Src/w5500.o
                                        0x68d2 (size before relaxing)
- .debug_str     0x00000000000876b1      0x122 ./Core/Src/w5500_interface.o
+ .debug_str     0x00000000000876d4      0x122 ./Core/Src/w5500_interface.o
                                       0x80bbf (size before relaxing)
- .debug_str     0x00000000000877d3      0x5a6 ./Core/Src/wizchip_conf.o
+ .debug_str     0x00000000000877f6      0x5a6 ./Core/Src/wizchip_conf.o
                                        0x718e (size before relaxing)
- .debug_str     0x0000000000087d79       0x36 ./Core/Startup/startup_stm32f103c8tx.o
+ .debug_str     0x0000000000087d9c       0x36 ./Core/Startup/startup_stm32f103c8tx.o
                                          0x4d (size before relaxing)
- .debug_str     0x0000000000087daf      0x375 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
+ .debug_str     0x0000000000087dd2      0x375 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
                                       0x7def7 (size before relaxing)
- .debug_str     0x0000000000088124      0x294 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+ .debug_str     0x0000000000088147      0x294 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
                                       0x7de43 (size before relaxing)
- .debug_str     0x00000000000883b8      0x23a ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
+ .debug_str     0x00000000000883db      0x23a ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
                                       0x7db6d (size before relaxing)
- .debug_str     0x00000000000885f2      0x305 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
+ .debug_str     0x0000000000088615      0x305 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
                                       0x7db4a (size before relaxing)
- .debug_str     0x00000000000888f7      0xb17 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o
+ .debug_str     0x000000000008891a      0xb17 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.o
                                       0x7e838 (size before relaxing)
- .debug_str     0x000000000008940e      0x209 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+ .debug_str     0x0000000000089431      0x209 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
                                       0x7dbf3 (size before relaxing)
- .debug_str     0x0000000000089617      0x4ed ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
+ .debug_str     0x000000000008963a      0x4ed ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o
                                       0x7e0f0 (size before relaxing)
 
 .comment        0x0000000000000000       0x50

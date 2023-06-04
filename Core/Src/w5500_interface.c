@@ -8,14 +8,14 @@ extern SPI_HandleTypeDef hspi1;
 /**
  * @brief function to set cs pin low to start transmission
  */
-void cs_sel() {
+static void cs_sel(void) {
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET); //CS LOW
 }
 
 /**
  * @brief function to set cs pin high to end transmission
  */
-void cs_desel() {
+static void cs_desel(void) {
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET); //CS HIGH
 }
 
@@ -74,3 +74,4 @@ void Socket_sendUDP(uint8_t socNum,uint8_t message[],uint8_t dstip[], uint16_t p
 {
 	while(sendto(socNum, message, strlen(message), dstip, portNum)!=strlen(message));//sends message to a destination ip address and port
 }
+
