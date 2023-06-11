@@ -34,40 +34,37 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := IMU
+BUILD_ARTIFACT_NAME := IMU-new
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-IMU.elf \
+IMU-new.elf \
 
 MAP_FILES += \
-IMU.map \
+IMU-new.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-IMU.list \
+IMU-new.list \
 
 OBJCOPY_HEX += \
-IMU.hex \
-
-OBJCOPY_BIN += \
-IMU.bin \
+IMU-new.hex \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: IMU.elf secondary-outputs
+main-build: IMU-new.elf secondary-outputs
 
 # Tool invocations
-IMU.elf IMU.map: $(OBJS) $(USER_OBJS) E:\STM32Cube\IMU\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "IMU.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"E:\STM32Cube\IMU\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="IMU.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+IMU-new.elf IMU-new.map: $(OBJS) $(USER_OBJS) E:\STM32Cube\IMU-new\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "IMU-new.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"E:\STM32Cube\IMU-new\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="IMU-new.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -76,27 +73,22 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-IMU.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "IMU.list"
+IMU-new.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "IMU-new.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-IMU.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "IMU.hex"
-	@echo 'Finished building: $@'
-	@echo ' '
-
-IMU.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "IMU.bin"
+IMU-new.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "IMU-new.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) IMU.bin IMU.elf IMU.hex IMU.list IMU.map default.size.stdout
+	-$(RM) IMU-new.elf IMU-new.hex IMU-new.list IMU-new.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX) $(OBJCOPY_BIN)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'
