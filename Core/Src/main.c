@@ -137,6 +137,7 @@ int main(void)
     heading = MPU6050_Parsing_NoOffest(&MPU6050);
     sprintf(str, "%d", heading);
     Socket_sendUDP(socNum, str, dstip, DST_PORT); // sends message to a destination ip address and port
+    HAL_Delay(350);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
